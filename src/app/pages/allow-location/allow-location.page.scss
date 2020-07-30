@@ -1,0 +1,55 @@
+ion-item{
+    --padding-start: 0;
+    --inner-padding-start: 0;
+    --background-focused: #fff;
+    border: 1px solid #d2d2d2;
+    ion-icon[name="search-outline"]{        
+        padding: 0 8px;
+    }
+    .input{        
+        width: 100%;    
+        padding: 10px 8px 10px 8px;        
+        border: none;
+        outline: none;
+        text-overflow: ellipsis;
+    }
+}  
+ion-card.custom-card{       
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    z-index: 9;
+    width: 100%;   
+    box-shadow: none;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;    
+    ion-card-title{
+        font-size: 1.1em;
+        font-weight: 600;
+        ion-img{
+            max-width: 20px;            
+        }
+    } 
+    ion-card-subtitle{
+        font-size: 0.9em;
+    }
+}
+.transparent-card{
+    background: transparent;
+}
+.navigation{
+    position: absolute;
+    bottom: 13em;
+    right: 1em;
+    z-index: 99;
+    max-width: 30px;
+    max-height: 30px;
+}
+.mapstyle{
+    position: absolute;
+    bottom: 16em;
+    right: 0.5em;
+    z-index: 99;
+    max-width: 30px;
+    max-height: 30px;
+}

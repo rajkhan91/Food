@@ -1,0 +1,36 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" routerDirection="root"></ion-back-button>
+    </ion-buttons>
+    <form [formGroup]="directionForm">      
+      <ion-list lines="none" class="ion-margin-end">
+        <ion-item>
+          <ion-icon name="search-outline" slot="start" size="small" class="ion-no-margin"></ion-icon>          
+          <input class="input" #autoCompleteInput formControlName="placeName" placeholder="Search for your address to deliver."/>
+        </ion-item>
+      </ion-list>
+    </form>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>  
+  <div #mapElement id="google-map-view"></div> 
+  <ion-fab-button class="mapstyle" (click)="changeMapstyle()" size="small" color="light">
+    <ion-icon name="earth-outline" size="small" color="primary"></ion-icon>    
+  </ion-fab-button>
+  <ion-fab-button class="navigation" (click)="currentNavigation()" color="light">
+    <ion-icon name="locate" size="small" color="primary"></ion-icon>
+  </ion-fab-button>
+  
+  <ion-card [ngClass]="addressFound?'custom-card':'custom-card transparent-card'">
+    <ion-card-header *ngIf="addressFound">
+      <ion-card-subtitle>Delivery location</ion-card-subtitle>
+      <ion-card-title><ion-img src="assets/images/map-pin.png" class="ion-margin-end ion-float-start"></ion-img>{{deliveryAddress}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>      
+      <ion-button expand="block" [color]="addressFound?'primary':'danger'" mode="ios" (click)="addressFound?deliverHere():''">{{buttonLabel}}</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+

@@ -1,0 +1,75 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button mode="ios"><img src="assets/images/ion-menu.png" class="ion-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      <small>Delivering to</small>
+      <ion-text color="light" routerLink="/allow-location" routerDirection="forward">
+        <h5 class="ion-no-margin">{{deleviryAddress}}<ion-icon name="chevron-down-outline" size="small"></ion-icon></h5>
+      </ion-text>
+    </ion-title>
+    <ion-buttons slot="end" routerDirection="forward" routerLink="/home">
+      <ion-icon class="ion-margin-end custom-icon" name="heart-outline"></ion-icon>
+      <ion-badge color="light" class="custom-badge">7</ion-badge>
+    </ion-buttons>
+    <ion-buttons slot="end" routerDirection="forward" routerLink="/your-order" routerDirection="forward">
+      <ion-icon class="ion-margin-end custom-icon" name="cart-outline"></ion-icon>
+      <ion-badge color="light" class="custom-badge">12</ion-badge>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+  <div class="post-border-gallery">
+    <div class="scrolling-wrapper">
+      <div class="card" routerLink="/detail" *ngFor="let item of gallery">
+        <div class="image-container">
+          <img src="{{item.image}}" />         
+        </div>
+      </div>
+    </div>
+  </div>  
+  <ion-card class="login-signup">
+    <ng-container>
+      <ion-item color="custom" tappable lines="none">
+        <ion-avatar slot="start">
+          <img src="assets/icon/login.svg">
+        </ion-avatar>
+        <ion-label class="ion-padding ion-no-margin">
+          <p class="ion-text-wrap">Login or create account for faster ordering</p>
+        </ion-label>       
+      </ion-item>
+      <ion-card-header class="ion-no-padding"><ion-button fill="clear" mode="ios" class="ion-no-padding ion-no-margin">Login</ion-button></ion-card-header>
+    </ng-container>    
+  </ion-card>
+  <div class="search ion-margin">    
+    <ion-searchbar mode="md" placeholder="Search Product..."></ion-searchbar>
+  </div>
+  <ion-title class="all-products ion-text-capitalize">{{productSegment}}</ion-title>
+  <ion-segment scrollable [(ngModel)]="productSegment" mode="md" (ionChange)="productChanged($event)">   
+    <ion-segment-button value="all products" class="custom-segment-button">
+      <ion-fab-button size="small" color="light" mode="ios" translucent="true"><ion-icon name="all-products"></ion-icon></ion-fab-button>      
+    </ion-segment-button> 
+    <ion-segment-button value="pizza" class="custom-segment-button">
+      <ion-fab-button size="small" color="light" mode="ios" translucent="true"><ion-icon name="pizzas"></ion-icon></ion-fab-button>      
+    </ion-segment-button>
+    <ion-segment-button value="burger" class="custom-segment-button">
+      <ion-fab-button size="small" color="light" mode="ios" translucent="true"><ion-icon name="burger"></ion-icon></ion-fab-button>
+    </ion-segment-button> 
+    <ion-segment-button value="breakfast" class="custom-segment-button">
+      <ion-fab-button size="small" color="light" mode="ios" translucent="true"><ion-icon name="breakfast"></ion-icon></ion-fab-button>
+    </ion-segment-button>
+    <ion-segment-button value="sweet" class="custom-segment-button">
+      <ion-fab-button size="small" color="light" mode="ios" translucent="true"><ion-icon name="sweet"></ion-icon></ion-fab-button>
+    </ion-segment-button>
+    <ion-segment-button value="fruits" class="custom-segment-button">
+      <ion-fab-button size="small" color="light" mode="ios" translucent="true"><ion-icon name="fruits"></ion-icon></ion-fab-button>
+    </ion-segment-button>       
+  </ion-segment>  
+  <ion-slides pager="true" [options]="slideOpts" mode="ios" class="ion-margin-vertical">
+    <ion-slide *ngFor="let item of offers" [ngStyle]="{'background-image': 'url(' + item.image + ')'}" class="backcover">
+      <h4>{{item.price}}</h4>      
+    </ion-slide>   
+  </ion-slides>
+</ion-content>

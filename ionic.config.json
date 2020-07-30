@@ -1,5 +1,7 @@
 {
-  "name": "FoodPicky",
-  "integrations": {},
+  "name": "Kwality",
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

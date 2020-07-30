@@ -1,0 +1,24 @@
+ion-content{
+    height: 100%;
+    --bullet-background: var(--ion-color-dark);
+    .elipse {
+        clip-path: ellipse(80% 50% at 50% 30%);
+        background: var(--ion-color-primary);     
+        min-height: 55%;
+        img{
+            height: 100%;
+        }
+    }
+    ion-card {
+        --webkit-box-shadow: none;
+        box-shadow: none;
+        margin-top: -50px;
+        ion-card-title{
+            font-weight: 600;
+            font-size: 1.5em;
+        }
+        .vertical-space{
+            padding: 5px 0;
+        }
+    }    
+}

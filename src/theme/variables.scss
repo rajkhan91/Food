@@ -4,12 +4,20 @@
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #3880ff;
+  --ion-color-primary: #d35400;
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #3171e0;
-  --ion-color-primary-tint: #4c8dff;
+  --ion-color-primary-shade: #eb1130;
+  --ion-color-primary-tint: #de314a;
+
+  /** appcolor **/
+  --ion-color-appcolor: #3880ff;
+  --ion-color-appcolor-rgb: 56, 128, 255;
+  --ion-color-appcolor-contrast: #ffffff;
+  --ion-color-appcolor-contrast-rgb: 255, 255, 255;
+  --ion-color-appcolor-shade: #3171e0;
+  --ion-color-appcolor-tint: #4c8dff;
 
   /** secondary **/
   --ion-color-secondary: #3dc2ff;
@@ -73,7 +81,23 @@
   --ion-color-light-contrast: #000000;
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
-  --ion-color-light-tint: #f5f6f9;
+  --ion-color-light-tint: #e5e7ff;
+
+  /** gold **/
+  --ion-color-gold: #ffd700;
+  --ion-color-gold-rgb: 255, 215, 0;
+  --ion-color-gold-contrast: #000000;
+  --ion-color-gold-contrast-rgb: 0, 0, 0;
+  --ion-color-gold-shade: #e0bd00;
+  --ion-color-gold-tint: #ffdb1a;
+
+  /** custom **/
+  --ion-color-custom: #c8f9ff;
+  --ion-color-custom-rgb: 255, 215, 0;
+  --ion-color-custom-contrast: #000000;
+  --ion-color-custom-contrast-rgb: 0, 0, 0;
+  --ion-color-custom-shade: #dde5e6;
+  --ion-color-custom-tint: #e6eff1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -145,6 +169,13 @@
     --ion-color-light-contrast-rgb: 255,255,255;
     --ion-color-light-shade: #1e2023;
     --ion-color-light-tint: #383a3e;
+
+    --ion-color-custom: #c8f9ff;
+    --ion-color-custom-rgb: 255, 215, 0;
+    --ion-color-custom-contrast: #000000;
+    --ion-color-custom-contrast-rgb: 0, 0, 0;
+    --ion-color-custom-shade: #dde5e6;
+    --ion-color-custom-tint: #e6eff1;
   }
 
   /*
@@ -225,4 +256,27 @@
 
     --ion-tab-bar-background: #1f1f1f;
   }
+}
+
+/** Fonts **/
+@font-face {
+  font-family: 'GlacialIndifference-Bold';
+  src: url("../assets/fonts/GlacialIndifference-Bold.otf");
+}
+@font-face {
+  font-family: 'GlacialIndifference-Italic';
+  src: url("../assets/fonts/GlacialIndifference-Italic.otf");
+}
+@font-face {
+  font-family: 'GlacialIndifference';
+  src: url("../assets/fonts/GlacialIndifference-Regular.otf");
+}
+:root {
+  --ion-font-family: 'GlacialIndifference';
+}
+:root[mode=md] {
+  --ion-font-family: 'GlacialIndifference';
+}
+:root[mode=ios] {
+  --ion-font-family: 'GlacialIndifference';
 }
